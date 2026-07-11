@@ -13,6 +13,12 @@ export function absoluteUrl(path = "") {
 
 export function createMetadata({ title, description, path = "" }: MetadataInput): Metadata {
   const url = absoluteUrl(path);
+  const image = {
+    url: "/og-image.svg",
+    width: 1200,
+    height: 630,
+    alt: `${siteConfig.name}: charlas y comunicación científica`
+  };
 
   return {
     title,
@@ -26,12 +32,14 @@ export function createMetadata({ title, description, path = "" }: MetadataInput)
       url,
       siteName: siteConfig.name,
       locale: "es_CL",
-      type: "website"
+      type: "website",
+      images: [image]
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description
+      description,
+      images: [image.url]
     }
   };
 }

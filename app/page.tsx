@@ -28,13 +28,22 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: "es_CL",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Física en 1 Minuto: charlas, divulgación y comunicación científica"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Física en 1 Minuto | Charlas, divulgación y comunicación científica",
     description:
-      "Charlas, talleres, campañas y proyectos de comunicación científica con Sebastián Molina, físico y creador de Física en 1 Minuto."
+      "Charlas, talleres, campañas y proyectos de comunicación científica con Sebastián Molina, físico y creador de Física en 1 Minuto.",
+    images: ["/og-image.svg"]
   }
 };
 
