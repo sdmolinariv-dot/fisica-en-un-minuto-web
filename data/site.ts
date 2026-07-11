@@ -110,30 +110,105 @@ export const contactReasons = [
   "Consulta general"
 ] as const;
 
+export const aboutIntroParagraphs = [
+  "Soy físico, Licenciado en Física por la Pontificia Universidad Católica de Chile, y creador de Física en 1 Minuto. Mi trabajo nace de una convicción sencilla: la ciencia no debería sentirse reservada para quienes ya saben de ciencia.",
+  "Antes de dedicarme a la divulgación a gran escala, me formé entre investigación experimental, docencia universitaria y análisis cuantitativo. Esa mezcla marca mi forma de comunicar: explicar desde primeros principios, cuidar el rigor y traducir ideas complejas sin convertirlas en humo.",
+  "Desde 2023 desarrollo Física en 1 Minuto, una plataforma de comunicación científica que combina videos breves, conversación con la comunidad, corrección de desinformación y proyectos educativos. También desarrollo Quiri, una aplicación gratuita de aprendizaje científico, y trabajo en un libro con Editorial Planeta."
+] as const;
+
+export const profileHighlights = [
+  {
+    value: "PUC",
+    label: "Licenciado en Física"
+  },
+  {
+    value: "2023",
+    label: "Inicio de Física en 1 Minuto"
+  },
+  {
+    value: "400.000+",
+    label: "seguidores en la comunidad"
+  },
+  {
+    value: "8M+",
+    label: "visualizaciones en 30 días, mayo-junio 2026"
+  },
+  {
+    value: "2013-2019",
+    label: "docencia y ayudantías universitarias"
+  },
+  {
+    value: "2",
+    label: "publicaciones científicas revisadas por pares"
+  }
+] as const;
+
 export const profileSections = [
   {
     title: "Formación académica",
-    text: "Espacio reservado para añadir información académica verificada."
+    text: "Formación científica y cuantitativa en la Pontificia Universidad Católica de Chile, complementada con estudios de estadística y física médica.",
+    items: [
+      "Licenciatura en Física, Pontificia Universidad Católica de Chile, 2014-2018.",
+      "Diplomado de posgrado en Estadística, PUC, 2019.",
+      "Estudios de pregrado en Matemática y Estadística, PUC, 2012-2013.",
+      "Escuela de verano Medical Physics for Radiotherapy, Heidelberg Center for Latin America, Universität Heidelberg, 2015."
+    ]
   },
   {
-    title: "Experiencia",
-    text: "Espacio reservado para describir experiencia profesional confirmada."
+    title: "Docencia universitaria",
+    text: "Experiencia explicando física y razonamiento cuantitativo en cursos universitarios, laboratorios y tutorías.",
+    items: [
+      "Ayudante y tutor en las facultades de Física y Matemáticas de la PUC, 2013-2019.",
+      "Apoyo docente en Física Experimental Avanzada, Física Moderna, Ondas y Óptica, Termodinámica, Electricidad y Magnetismo.",
+      "Tutor en el programa de inclusión PIANE-UC y ayudante en cursos de razonamiento matemático y cuantitativo."
+    ]
   },
   {
-    title: "Hitos",
-    text: "Espacio reservado para hitos del proyecto, sin cifras ni reconocimientos inventados."
+    title: "Investigación científica",
+    text: "Trabajo de investigación de pregrado en física de superficies, materia blanda, biofísica y materiales.",
+    items: [
+      "Investigador de pregrado en Surface Physics & Soft Matter Laboratory (SurfLab), PUC, 2015-2018.",
+      "Fabricación y caracterización de bicapas lipídicas y membranas celulares artificiales en sustratos de silicio y silicio poroso.",
+      "Coautor de publicaciones en International Journal of Molecular Sciences (2020) y Materials Letters (2019).",
+      "Coautor de presentaciones en encuentros como SOCHIFI, MRS Fall Meeting, DPG Spring Meeting y congresos chilenos de nanociencia y nanotecnología."
+    ]
   },
   {
-    title: "Apariciones en medios",
-    text: "Espacio reservado para medios reales cuando estén disponibles."
+    title: "Divulgación científica",
+    text: "Física en 1 Minuto traduce conceptos científicos desde primeros principios para audiencias no especialistas, con foco en claridad, rigor y pensamiento crítico.",
+    items: [
+      "Fundador y creador de Física en 1 Minuto, 2023-presente.",
+      "Comunidad de más de 400.000 seguidores y más de 8 millones de visualizaciones en un periodo de 30 días, según dashboard profesional de Instagram de mayo-junio de 2026.",
+      "Contenido creado de forma orgánica, muchas veces en respuesta directa a preguntas de la comunidad o a casos de desinformación pública."
+    ]
   },
   {
-    title: "Charlas destacadas",
-    text: "Espacio reservado para charlas verificadas y autorizadas para publicar."
+    title: "Medios y charlas",
+    text: "Participación como comunicador científico en medios, ferias del libro, clases abiertas y conversaciones públicas sobre ciencia.",
+    items: [
+      "Clase magistral online sobre Relatividad General de Einstein, Academia Into Space, agosto de 2024.",
+      "Panelista en La Furia del Libro, Santiago, en la conversación sobre financiamiento público de la ciencia, mayo de 2026.",
+      "Apariciones o entrevistas en Radio ADN, NTV/TVN, Meteored, Radio Bío-Bío/BioBioChile, Radio UFRO, CNN Chile y el podcast Let's Get Physical / TXS Plus.",
+      "Cobertura y perfiles en medios como El Mostrador, BioBioChile, OhMyGeek, El Ciudadano, Agenda Transparencia, Central Noticia, Canal Local y El Reporte Diario."
+    ]
   },
   {
     title: "Proyectos",
-    text: "Espacio reservado para proyectos editoriales, audiovisuales y educativos confirmados."
+    text: "Desarrollo de productos educativos y editoriales que conectan ciencia, cultura digital y aprendizaje continuo.",
+    items: [
+      "Autor de Física en 1 Minuto, libro en desarrollo con Editorial Planeta; entrega de manuscrito prevista para septiembre de 2026.",
+      "Fundador y desarrollador de Quiri, aplicación gratuita de aprendizaje científico tipo quiz, disponible en Google Play.",
+      "Quiri registró cerca de 3.500 usuarios activos entre febrero y junio de 2026, con usuarios en Chile, España, México y Estados Unidos."
+    ]
+  },
+  {
+    title: "Experiencia profesional",
+    text: "Trabajo cuantitativo en riesgo financiero y cumplimiento, desarrollado en paralelo e independientemente de la comunicación científica.",
+    items: [
+      "Analista de Riesgo Financiero en Falabella Corporativo, 2025-presente.",
+      "Experiencia en Banco Santander, 2019-2024, en roles vinculados a cumplimiento, riesgo fiduciario y trading.",
+      "Trayectoria profesional enfocada en análisis cuantitativo, gestión de riesgos, cumplimiento normativo y protección al consumidor."
+    ]
   }
 ] as const;
 
