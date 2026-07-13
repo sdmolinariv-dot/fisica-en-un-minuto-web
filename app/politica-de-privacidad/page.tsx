@@ -14,12 +14,13 @@ export default function PoliticaDePrivacidadPage() {
         <h1 className="text-4xl font-semibold text-ink">Política de privacidad</h1>
         <div className="mt-6 grid gap-5 text-base leading-7 text-ink-soft">
           <p>
-            Esta primera versión del sitio incluye formularios en modo demostración. Los datos ingresados no se envían a
-            un backend mientras no se configure un endpoint real.
+            Los formularios de contacto recopilan los datos que cada persona ingresa, como nombre, correo, organización,
+            teléfono opcional y mensaje, con el único fin de responder consultas, solicitudes de charlas y propuestas de
+            colaboración.
           </p>
           <p>
-            Si se conecta un servicio de formularios, correo o analítica, esta página debe actualizarse indicando qué
-            datos se recopilan, con qué finalidad, durante cuánto tiempo se conservan y cómo solicitar su eliminación.
+            Al enviar un formulario, la información se transmite mediante FormSubmit para entregar la consulta a
+            contacto@fisicaenunminuto.com. El servicio conserva las solicitudes conforme a sus propias condiciones.
           </p>
           <p>
             No se deben publicar claves privadas ni credenciales en el frontend. Cualquier integración sensible debe

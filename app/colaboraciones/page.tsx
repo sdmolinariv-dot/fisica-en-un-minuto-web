@@ -119,14 +119,14 @@ export default function ColaboracionesPage() {
             <SectionHeading
               eyebrow="Formulario comercial"
               title="Cuéntame qué necesita comunicar tu marca."
-              description="El formulario queda listo para conectar a Formspree, Resend mediante API propia o un CRM."
+              description="Las propuestas llegan directamente al equipo de Física en 1 Minuto."
             />
           </div>
           <ContactForm
             formName="colaboraciones"
             fields={collaborationFields}
             submitLabel="Enviar propuesta"
-            successMessage="Gracias. La propuesta quedó registrada en modo demostración."
+            successMessage="Gracias. Tu propuesta fue enviada correctamente."
           />
         </div>
       </section>

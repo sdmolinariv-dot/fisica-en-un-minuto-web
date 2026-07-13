@@ -71,12 +71,9 @@ Para logos reales, agrega objetos en `logoCollaborations` dentro de `data/site.t
 
 ## Formularios
 
-Los formularios tienen validación, estados de carga, éxito y error, además de honeypot antispam. En esta versión funcionan en modo demostración si no hay endpoint configurado.
+Los formularios tienen validación, estados de carga, éxito y error, además de honeypot antispam. Por defecto, se envían a `contacto@fisicaenunminuto.com` mediante FormSubmit.
 
-Para conectar un envío real:
-
-1. Crea un endpoint seguro propio o usa un servicio compatible.
-2. Configura una variable pública solo para la URL del endpoint:
+Para reemplazar el proveedor de envío, configura una variable pública solo para la URL del endpoint:
 
 ```bash
 NEXT_PUBLIC_FORM_ENDPOINT="https://tu-endpoint-publico"

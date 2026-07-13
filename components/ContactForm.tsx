@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Loader2, Send } from "lucide-react";
+import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 export type ContactFormField = {
@@ -28,7 +29,7 @@ export function ContactForm({
   formName,
   fields,
   submitLabel,
-  successMessage = "Gracias. El formulario quedó listo para envío en modo demostración.",
+  successMessage = "Gracias. Tu mensaje fue enviado correctamente.",
   className
 }: ContactFormProps) {
   const initialValues = useMemo(
@@ -83,30 +84,27 @@ export function ContactForm({
     setStatus("loading");
 
     try {
+      const emailField = fields.find((field) => field.type === "email");
       const payload = {
         formName,
         submittedAt: new Date().toISOString(),
-        fields: values
+        ...values,
+        _subject: `Nuevo mensaje desde Física en 1 Minuto: ${formName}`,
+        _replyto: emailField ? values[emailField.name] : undefined,
+        _template: "table"
       };
 
-      // Connect a real sender here. For Formspree, Resend through an API route,
-      // or a custom endpoint, set NEXT_PUBLIC_FORM_ENDPOINT to a safe public URL.
-      // Never expose private API keys in this client component.
-      const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
+      const endpoint =
+        process.env.NEXT_PUBLIC_FORM_ENDPOINT ??
+        `https://formsubmit.co/ajax/${encodeURIComponent(siteConfig.contact.email)}`;
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
 
-      if (endpoint) {
-        const response = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        if (!response.ok) {
-          throw new Error("El endpoint rechazó el envío.");
-        }
-      } else {
-        await new Promise((resolve) => setTimeout(resolve, 650));
-        console.info("Formulario en modo demostración:", payload);
+      if (!response.ok) {
+        throw new Error("El servicio de correo rechazó el envío.");
       }
 
       setStatus("success");

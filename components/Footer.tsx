@@ -36,7 +36,9 @@ export function Footer() {
           <div className="mt-4 [&_span]:border-white/18 [&_span]:bg-white/8 [&_span]:text-white/74 [&_a]:border-white/18 [&_a]:bg-white/8 [&_a]:text-white/90">
             <SocialLinks compact />
           </div>
-          <p className="mt-5 text-sm text-white/58">{siteConfig.contact.email || siteConfig.contact.emailLabel}</p>
+          <a href={`mailto:${siteConfig.contact.email}`} className="mt-5 inline-flex text-sm text-white/58 hover:text-white">
+            {siteConfig.contact.email || siteConfig.contact.emailLabel}
+          </a>
         </div>
       </div>
     </footer>

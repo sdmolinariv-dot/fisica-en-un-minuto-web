@@ -2,7 +2,7 @@ import { ContactForm, type ContactFormField } from "@/components/ContactForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SocialLinks } from "@/components/SocialLinks";
 import { createMetadata } from "@/lib/seo";
-import { budgetRanges, contactReasons } from "@/data/site";
+import { budgetRanges, contactReasons, siteConfig } from "@/data/site";
 
 export const metadata = createMetadata({
   title: "Contacto",
@@ -62,10 +62,13 @@ export default function ContactoPage() {
           </div>
 
           <div className="mt-8">
-            <SectionHeading title="Redes y correo" description="Todos los enlaces se configuran en data/site.ts." />
+            <SectionHeading title="Redes y correo" description="Escríbeme directamente a contacto@fisicaenunminuto.com." />
             <div className="mt-5">
               <SocialLinks />
             </div>
+            <a href={`mailto:${siteConfig.contact.email}`} className="mt-5 inline-flex text-sm font-semibold text-blue hover:text-deep-purple">
+              {siteConfig.contact.email}
+            </a>
           </div>
         </div>
 
@@ -73,7 +76,7 @@ export default function ContactoPage() {
           formName="contacto-general"
           fields={contactFields}
           submitLabel="Enviar mensaje"
-          successMessage="Gracias. El mensaje quedó registrado en modo demostración."
+          successMessage="Gracias. Tu mensaje fue enviado correctamente."
         />
       </div>
     </section>

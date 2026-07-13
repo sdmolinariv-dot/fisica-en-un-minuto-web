@@ -11,8 +11,8 @@ export const siteConfig = {
       "Físico y creador de Física en 1 Minuto, proyecto de divulgación científica enfocado en ciencia clara, pensamiento crítico y comunicación responsable."
   },
   contact: {
-    email: "",
-    emailLabel: "Correo configurable"
+    email: "contacto@fisicaenunminuto.com",
+    emailLabel: "contacto@fisicaenunminuto.com"
   },
   navigation: [
     { label: "Inicio", href: "/" },

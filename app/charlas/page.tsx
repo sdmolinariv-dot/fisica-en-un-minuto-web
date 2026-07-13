@@ -96,7 +96,7 @@ export default function CharlasPage() {
             formName="cotizacion-charlas"
             fields={talkFormFields}
             submitLabel="Cotizar esta charla"
-            successMessage="Gracias. La solicitud quedó registrada en modo demostración y lista para conectarse a un sistema de envío."
+            successMessage="Gracias. Tu solicitud fue enviada correctamente."
           />
         </div>
       </section>
