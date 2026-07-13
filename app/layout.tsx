@@ -1,9 +1,16 @@
 import type { Metadata, Viewport } from "next";
+import { Archivo } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -28,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Física en 1 Minuto: charlas y comunicación científica"
@@ -39,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: ["/og-image.svg"]
+    images: ["/og.png"]
   },
   robots: {
     index: true,
@@ -83,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="es-CL">
-      <body>
+      <body className={archivo.variable}>
         <a href="#contenido" className="skip-link">
           Saltar al contenido
         </a>

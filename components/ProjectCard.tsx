@@ -11,14 +11,14 @@ type ProjectCardProps = {
 export function ProjectCard({ title, description, href, tag }: ProjectCardProps) {
   return (
     <Link href={href} className="group block h-full">
-      <article className="h-full rounded-lg border border-ink/10 bg-white p-6 shadow-line transition hover:-translate-y-1 hover:border-blue/24 hover:shadow-soft">
+      <article className="flex h-full min-h-64 flex-col border border-ink/12 bg-white p-6 transition-[border-color,transform,background-color] duration-200 hover:-translate-y-0.5 hover:border-blue hover:bg-mint/30">
         <div className="flex items-start justify-between gap-4">
-          <span className="rounded-full bg-blue/10 px-3 py-1 text-xs font-bold uppercase text-blue">
+          <span className="bg-ink px-3 py-1 text-xs font-semibold tracking-[0.06em] text-white">
             {tag}
           </span>
-          <ArrowUpRight aria-hidden="true" className="h-5 w-5 text-ink-soft transition group-hover:text-deep-purple" />
+          <ArrowUpRight aria-hidden="true" className="h-5 w-5 text-ink-soft transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-deep-purple" />
         </div>
-        <h3 className="mt-5 text-xl font-semibold text-ink">{title}</h3>
+        <h3 className="mt-10 text-2xl font-semibold leading-tight tracking-[-0.02em] text-ink">{title}</h3>
         <p className="mt-3 text-sm leading-6 text-ink-soft">{description}</p>
       </article>
     </Link>

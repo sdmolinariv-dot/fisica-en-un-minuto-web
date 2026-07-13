@@ -14,14 +14,14 @@ export function ActionLink({ href, children, variant = "primary", className }: A
     <Link
       href={href}
       className={cn(
-        "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition",
+        "inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-[transform,background-color,border-color,color] duration-200 ease-out active:translate-y-px",
         "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan",
         variant === "primary" &&
-          "bg-ink text-white shadow-soft hover:-translate-y-0.5 hover:bg-deep-purple",
+          "bg-blue text-white hover:-translate-y-0.5 hover:bg-cyan",
         variant === "secondary" &&
-          "border border-ink/15 bg-white/78 text-ink hover:-translate-y-0.5 hover:border-violet/40 hover:text-deep-purple",
+          "border border-ink/20 bg-white text-ink hover:-translate-y-0.5 hover:border-blue hover:text-deep-purple",
         variant === "light" &&
-          "border border-white/24 bg-white text-ink hover:-translate-y-0.5 hover:bg-mint",
+          "border border-white/28 bg-transparent text-white hover:-translate-y-0.5 hover:border-white hover:bg-white/10",
         className
       )}
     >

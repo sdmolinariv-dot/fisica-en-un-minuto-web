@@ -119,7 +119,7 @@ export function ContactForm({
 
   return (
     <form
-      className={cn("rounded-lg border border-ink/10 bg-white p-5 shadow-soft sm:p-8", className)}
+      className={cn("rounded-lg border border-ink/12 bg-white p-5 sm:p-8", className)}
       onSubmit={handleSubmit}
       noValidate
     >
@@ -189,7 +189,7 @@ export function ContactForm({
         <button
           type="submit"
           disabled={status === "loading"}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-deep-purple disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-blue px-6 py-3 text-sm font-semibold text-white transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-cyan active:translate-y-px disabled:cursor-not-allowed disabled:opacity-70"
         >
           {status === "loading" ? (
             <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />

@@ -32,9 +32,9 @@ export const siteConfig = {
   ],
   imageSlots: {
     hero: {
-      src: "",
-      fileName: "/public/images/sebastian-hero.webp",
-      alt: "Fotografía o video vertical de Sebastián Molina"
+      src: "/fisica-hero-prism.png",
+      fileName: "/public/fisica-hero-prism.png",
+      alt: "Prisma de vidrio, péndulo y rayos de luz como metáfora visual de la física"
     },
     speaking: {
       src: "",

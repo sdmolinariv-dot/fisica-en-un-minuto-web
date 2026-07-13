@@ -39,18 +39,18 @@ export function ServiceCard({ title, description, href, icon = "Sparkles", items
   const card = (
     <article
       id={id}
-      className="group h-full rounded-lg border border-ink/10 bg-white/86 p-6 shadow-line transition hover:-translate-y-1 hover:border-violet/25 hover:shadow-soft"
+      className="group h-full border-t border-ink/15 bg-white px-1 pb-3 pt-6 transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-blue"
     >
-      <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-violet/10 text-violet">
-        <Icon aria-hidden="true" className="h-6 w-6" />
+      <div className="mb-6 inline-flex h-10 w-10 items-center justify-center bg-mint text-blue">
+        <Icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.75} />
       </div>
-      <h3 className="text-xl font-semibold text-ink">{title}</h3>
+      <h3 className="text-xl font-semibold tracking-[-0.015em] text-ink">{title}</h3>
       {description ? <p className="mt-3 text-sm leading-6 text-ink-soft">{description}</p> : null}
       {items && items.length > 0 ? (
         <ul className="mt-4 grid gap-2 text-sm leading-6 text-ink-soft">
           {items.map((item) => (
             <li key={item} className="flex gap-2">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" />
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
               <span>{item}</span>
             </li>
           ))}

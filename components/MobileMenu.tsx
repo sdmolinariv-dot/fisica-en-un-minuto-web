@@ -24,14 +24,14 @@ export function MobileMenu() {
       {open ? (
         <div
           id="mobile-menu"
-          className="absolute inset-x-4 top-20 rounded-lg border border-ink/10 bg-white p-4 shadow-soft"
+          className="absolute inset-x-4 top-20 rounded-lg border border-ink/12 bg-white p-4 shadow-soft"
         >
           <nav aria-label="Navegación móvil" className="grid gap-1">
             {siteConfig.navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-lg px-4 py-3 text-base font-semibold text-ink hover:bg-violet/10"
+                className="rounded-md px-4 py-3 text-base font-semibold text-ink transition-colors hover:bg-mint/60"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
@@ -39,7 +39,7 @@ export function MobileMenu() {
             ))}
             <Link
               href="/charlas#cotizar-charla"
-              className="mt-3 rounded-full bg-ink px-4 py-3 text-center text-sm font-semibold text-white"
+              className="mt-3 rounded-md bg-blue px-4 py-3 text-center text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >
               Cotizar una charla

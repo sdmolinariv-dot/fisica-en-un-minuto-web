@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Física en 1 Minuto: charlas, divulgación y comunicación científica"
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Física en 1 Minuto | Charlas, divulgación y comunicación científica",
     description:
       "Charlas, talleres, campañas y proyectos de comunicación científica con Sebastián Molina, físico y creador de Física en 1 Minuto.",
-    images: ["/og-image.svg"]
+    images: ["/og.png"]
   }
 };
 
@@ -52,15 +52,15 @@ export default function HomePage() {
     <>
       <Hero
         eyebrow="Física en 1 Minuto"
-        title="La ciencia puede ser rigurosa sin ser difícil."
-        text="Soy Sebastián Molina, físico y creador de Física en 1 Minuto. Ayudo a personas, organizaciones y marcas a comunicar ideas complejas de forma clara, entretenida y responsable."
+        title="La física no es difícil. Es una historia por contar."
+        text="Soy Sebastián Molina, físico y creador de Física en 1 Minuto. Convierto ideas complejas en historias claras, entretenidas y responsables."
         primary={{ label: "Ver charlas", href: "/charlas" }}
         secondary={{ label: "Trabajemos juntos", href: "/contacto" }}
-        supportLine="Divulgación científica, pensamiento crítico y comunicación para una comunidad de más de 400.000 personas."
+        supportLine="Más de 400.000 personas ya hacen de la curiosidad una conversación."
         media={
           <ImageSlot
             src={siteConfig.imageSlots.hero.src}
-            aspect="portrait"
+            aspect="wide"
             alt={siteConfig.imageSlots.hero.alt}
             fileName={siteConfig.imageSlots.hero.fileName}
             label="Foto o video vertical de Sebastián"
@@ -68,14 +68,14 @@ export default function HomePage() {
         }
       />
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="page-band bg-paper px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Qué hago"
-            title="Formatos para explicar ciencia con rigor, ritmo y una voz humana."
-            description="Cada línea está pensada para organizaciones que necesitan claridad sin sacrificar profundidad."
+            title="Explicar bien es hacer que una idea tenga lugar en la cabeza de alguien."
+            description="Charlas, contenido, proyectos educativos y audiovisuales para organizaciones que necesitan claridad sin sacrificar profundidad."
           />
-          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {homeServices.map((service) => (
               <ServiceCard key={service.title} {...service} />
             ))}
@@ -83,16 +83,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ink px-4 py-16 sm:px-6 lg:px-8">
-        <div className="science-panel mx-auto max-w-7xl">
-          <div className="relative z-10">
+      <section className="bg-ink px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div>
             <SectionHeading
               eyebrow="Impacto"
-              title="Una comunidad que conversa ciencia todos los días."
-              description="Los datos están centralizados para actualizarlos cuando existan nuevas cifras verificadas."
+              title="Una comunidad que no se conforma con la primera explicación."
+              description="Ciencia en lenguaje cotidiano, conversaciones que siguen después del video y una audiencia que llega por curiosidad."
               className="text-white [&_h2]:text-white [&_p]:text-white/72"
             />
-            <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {impactMetrics.map((metric) => (
                 <MetricCard key={metric.label} {...metric} />
               ))}
@@ -101,14 +101,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Proyectos destacados"
-            title="Educación, contenido y experiencias para públicos reales."
-            description="Una vista editable de los proyectos principales del ecosistema Física en 1 Minuto."
+            title="La ciencia viaja mejor cuando encuentra el formato correcto."
+            description="Educación, contenido y experiencias creadas para públicos reales, con objetivos reales."
           />
-          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}

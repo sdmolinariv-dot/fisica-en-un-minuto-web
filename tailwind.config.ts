@@ -10,18 +10,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#111426",
-        "ink-soft": "#202849",
-        "deep-purple": "#341062",
-        violet: "#6d3df2",
-        blue: "#2563eb",
-        cyan: "#14b8c4",
-        mint: "#b7f7cf",
-        paper: "#f8fbff"
+        ink: "#091D43",
+        "ink-soft": "#3A5078",
+        "deep-purple": "#073FBE",
+        violet: "#0A58E8",
+        blue: "#0A58E8",
+        cyan: "#00A8D6",
+        mint: "#D9F4FF",
+        paper: "#F4F7FC",
+        signal: "#FF755A"
       },
       boxShadow: {
-        soft: "0 18px 50px rgba(17, 20, 38, 0.12)",
-        line: "0 1px 0 rgba(17, 20, 38, 0.08)"
+        soft: "0 10px 28px rgba(9, 29, 67, 0.14)",
+        line: "0 1px 0 rgba(9, 29, 67, 0.1)"
       },
       keyframes: {
         "fade-up": {
@@ -39,7 +40,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "var(--font-archivo)",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
