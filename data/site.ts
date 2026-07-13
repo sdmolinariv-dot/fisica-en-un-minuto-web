@@ -207,12 +207,6 @@ export const profileSections = [
   }
 ] as const;
 
-export const quiriStats = [
-  { value: "Editable", label: "descargas" },
-  { value: "Editable", label: "eventos temáticos" },
-  { value: "Editable", label: "participación" }
-] as const;
-
 export const quiriDownloadLinks = [
   { label: "Android", href: "" },
   { label: "iOS", href: "" }

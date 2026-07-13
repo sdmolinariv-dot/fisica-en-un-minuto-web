@@ -2,12 +2,11 @@ import { Download } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
 import { ImageSlot } from "@/components/ImageSlot";
 import { JsonLd } from "@/components/JsonLd";
-import { MetricCard } from "@/components/MetricCard";
 import { QuiriFeatureCard } from "@/components/QuiriFeatureCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { createMetadata } from "@/lib/seo";
 import { quiriFeatures } from "@/data/services";
-import { quiriDownloadLinks, quiriStats, siteConfig } from "@/data/site";
+import { quiriDownloadLinks, siteConfig } from "@/data/site";
 
 export const metadata = createMetadata({
   title: "Quiri",
@@ -77,7 +76,7 @@ export default function QuiriPage() {
           <SectionHeading
             eyebrow="Características"
             title="Una experiencia educativa pensada como juego."
-            description="La información está preparada para crecer con capturas, estadísticas y enlaces reales."
+            description="La experiencia está preparada para crecer con capturas y enlaces reales."
           />
           <div className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {quiriFeatures.map((feature) => (
@@ -105,23 +104,6 @@ export default function QuiriPage() {
             label="Captura real 02"
             className="w-full max-w-[22rem]"
           />
-        </div>
-      </section>
-
-      <section className="bg-ink px-4 py-16 sm:px-6 lg:px-8">
-        <div className="science-panel mx-auto max-w-7xl text-white">
-          <div className="relative z-10">
-            <SectionHeading
-              eyebrow="Estadísticas editables"
-              title="Datos preparados para actualizarse con métricas reales."
-              className="text-white [&_h2]:text-white"
-            />
-            <div className="mt-9 grid gap-4 sm:grid-cols-3">
-              {quiriStats.map((stat) => (
-                <MetricCard key={stat.label} value={stat.value} label={stat.label} detail="Campo listo para editar en data/site.ts." />
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
