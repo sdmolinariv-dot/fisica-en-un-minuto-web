@@ -24,7 +24,25 @@ writeFileSync(
   `export default {
   async fetch(request, env) {
     if (env && env.ASSETS && typeof env.ASSETS.fetch === "function") {
-      return env.ASSETS.fetch(request);
+      const assetResponse = await env.ASSETS.fetch(request);
+
+      if (assetResponse.status !== 404 || request.method !== "GET") {
+        return assetResponse;
+      }
+
+      const url = new URL(request.url);
+      const isExtensionlessRoute = url.pathname !== "/" && !/\\.[^/]+$/.test(url.pathname);
+
+      if (isExtensionlessRoute) {
+        url.pathname = url.pathname.replace(/\\/$/, "") + ".html";
+        const htmlResponse = await env.ASSETS.fetch(new Request(url, request));
+
+        if (htmlResponse.status !== 404) {
+          return htmlResponse;
+        }
+      }
+
+      return assetResponse;
     }
 
     return new Response("Static asset binding is not available.", {
