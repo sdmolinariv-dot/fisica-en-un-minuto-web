@@ -37,9 +37,9 @@ export const siteConfig = {
       alt: "Prisma de vidrio, péndulo y rayos de luz como metáfora visual de la física"
     },
     speaking: {
-      src: "",
-      fileName: "/public/images/sebastian-speaking.webp",
-      alt: "Fotografía profesional de Sebastián Molina en una charla"
+      src: "/sebastian-molina.jpg",
+      fileName: "/public/sebastian-molina.jpg",
+      alt: "Retrato de Sebastián Molina, físico y creador de Física en 1 Minuto"
     },
     quiriCharacter: {
       src: "/quiri-mascot.png",

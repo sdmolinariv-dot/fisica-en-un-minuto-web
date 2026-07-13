@@ -21,6 +21,7 @@ export default function SobreMiPage() {
             aspect="portrait"
             alt={siteConfig.imageSlots.speaking.alt}
             fileName={siteConfig.imageSlots.speaking.fileName}
+            imageClassName="object-top"
             label="Fotografía profesional"
           />
           <div>

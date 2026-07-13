@@ -9,9 +9,10 @@ type ImageSlotProps = {
   aspect?: "portrait" | "wide" | "square";
   label?: string;
   className?: string;
+  imageClassName?: string;
 };
 
-export function ImageSlot({ src, alt, fileName, aspect = "wide", label, className }: ImageSlotProps) {
+export function ImageSlot({ src, alt, fileName, aspect = "wide", label, className, imageClassName }: ImageSlotProps) {
   return (
     <div
       className={cn(
@@ -23,7 +24,13 @@ export function ImageSlot({ src, alt, fileName, aspect = "wide", label, classNam
       )}
     >
       {src ? (
-        <Image src={src} alt={alt} fill className="object-cover" sizes="(min-width: 1024px) 42vw, 92vw" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className={cn("object-cover", imageClassName)}
+          sizes="(min-width: 1024px) 42vw, 92vw"
+        />
       ) : (
         <div
           role="img"
