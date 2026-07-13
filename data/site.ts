@@ -23,12 +23,9 @@ export const siteConfig = {
     { label: "Contacto", href: "/contacto" }
   ],
   socialLinks: [
-    { label: "Instagram", href: "" },
-    { label: "YouTube", href: "" },
-    { label: "TikTok", href: "" },
-    { label: "LinkedIn", href: "" },
-    { label: "Spotify", href: "" },
-    { label: "Correo", href: "" }
+    { label: "Instagram", href: "https://www.instagram.com/fisica.en.1.minuto/" },
+    { label: "TikTok", href: "https://www.tiktok.com/@fisica.en.1.minuto?_r=1&_t=ZS-980BGmcA3Qj" },
+    { label: "YouTube", href: "https://www.youtube.com/@Fisica.en.1.minuto" }
   ],
   imageSlots: {
     hero: {

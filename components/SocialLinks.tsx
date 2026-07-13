@@ -1,14 +1,11 @@
-import { BriefcaseBusiness, Camera, Mail, Music2, PlaySquare, Podcast } from "lucide-react";
+import { Camera, Music2, PlaySquare } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 const icons = {
   Instagram: Camera,
-  YouTube: PlaySquare,
   TikTok: Music2,
-  LinkedIn: BriefcaseBusiness,
-  Spotify: Podcast,
-  Correo: Mail
+  YouTube: PlaySquare
 };
 
 type SocialLinksProps = {
@@ -19,7 +16,7 @@ export function SocialLinks({ compact = false }: SocialLinksProps) {
   return (
     <ul className={cn("flex flex-wrap gap-2", compact ? "gap-2" : "gap-3")}>
       {siteConfig.socialLinks.map((link) => {
-        const Icon = icons[link.label as keyof typeof icons] ?? Mail;
+        const Icon = icons[link.label as keyof typeof icons] ?? Camera;
         const content = (
           <>
             <Icon aria-hidden="true" className="h-4 w-4" />
