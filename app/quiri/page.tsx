@@ -19,16 +19,16 @@ export const metadata = createMetadata({
 export default function QuiriPage() {
   return (
     <>
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+      <section className="quiri-hero overflow-hidden px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:gap-16">
           <div>
-            <p className="mb-4 text-sm font-bold uppercase text-violet">Quiri</p>
-            <h1 className="text-4xl font-semibold leading-tight text-ink sm:text-6xl">
-              Aprender jugando también puede sentirse como jugar de verdad.
+            <p className="mb-5 text-sm font-semibold tracking-[0.08em] text-blue">Quiri</p>
+            <h1 className="text-balance max-w-3xl text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-ink sm:text-6xl">
+              Una pregunta. Un desafío. Otra forma de aprender.
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-ink-soft">
-              Quiri es un juego de preguntas, eventos y desafíos donde las personas pueden aprender ciencia, cultura y
-              pensamiento crítico mientras avanzan, compiten y desbloquean recompensas.
+            <p className="text-pretty mt-6 max-w-2xl text-lg leading-8 text-ink-soft">
+              Quiri convierte la curiosidad en juego: preguntas, eventos y desafíos para aprender ciencia, cultura y
+              pensamiento crítico mientras avanzas y desbloqueas recompensas.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               {quiriDownloadLinks.map((link) =>
@@ -38,7 +38,7 @@ export default function QuiriPage() {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex min-h-11 items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:bg-deep-purple"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-md bg-blue px-5 py-3 text-sm font-semibold text-white transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-cyan active:translate-y-px"
                   >
                     <Download aria-hidden="true" className="h-4 w-4" />
                     Descargar para {link.label}
@@ -46,7 +46,7 @@ export default function QuiriPage() {
                 ) : (
                   <span
                     key={link.label}
-                    className="inline-flex min-h-11 items-center gap-2 rounded-full border border-dashed border-ink/16 bg-white px-5 py-3 text-sm font-semibold text-ink-soft"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-md border border-ink/16 bg-white/70 px-5 py-3 text-sm font-semibold text-ink-soft"
                   >
                     <Download aria-hidden="true" className="h-4 w-4" />
                     Enlace {link.label} pendiente
@@ -55,24 +55,31 @@ export default function QuiriPage() {
               )}
             </div>
           </div>
-          <ImageSlot
-            src={siteConfig.imageSlots.quiriCharacter.src}
-            aspect="square"
-            alt={siteConfig.imageSlots.quiriCharacter.alt}
-            fileName={siteConfig.imageSlots.quiriCharacter.fileName}
-            label="Imagen de Quiri"
-          />
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div aria-hidden="true" className="absolute inset-7 -rotate-3 bg-signal/85" />
+            <ImageSlot
+              src={siteConfig.imageSlots.quiriCharacter.src}
+              aspect="square"
+              alt={siteConfig.imageSlots.quiriCharacter.alt}
+              fileName={siteConfig.imageSlots.quiriCharacter.fileName}
+              label="Quiri, guía de curiosidad"
+              className="quiri-mascot relative -rotate-2"
+            />
+            <p className="absolute -bottom-4 -left-3 bg-ink px-4 py-3 text-sm font-semibold text-white shadow-line sm:left-6">
+              Aprender también puede dar ganas de seguir jugando.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Características"
             title="Una experiencia educativa pensada como juego."
             description="La información está preparada para crecer con capturas, estadísticas y enlaces reales."
           />
-          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {quiriFeatures.map((feature) => (
               <QuiriFeatureCard key={feature} title={feature} />
             ))}

@@ -42,9 +42,9 @@ export const siteConfig = {
       alt: "Fotografía profesional de Sebastián Molina en una charla"
     },
     quiriCharacter: {
-      src: "",
-      fileName: "/public/images/quiri-character.webp",
-      alt: "Imagen del pudú protagonista de Quiri"
+      src: "/quiri-mascot.png",
+      fileName: "/public/quiri-mascot.png",
+      alt: "Quiri, el pudú protagonista del juego educativo Quiri"
     },
     quiriScreenshotOne: {
       src: "",

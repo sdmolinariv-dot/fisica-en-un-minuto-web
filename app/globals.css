@@ -173,6 +173,20 @@ a {
   text-wrap: pretty;
 }
 
+.quiri-hero {
+  background: #d9f4ff;
+}
+
+.quiri-mascot {
+  border: 4px solid #ffffff;
+  box-shadow: 14px 14px 0 #0a58e8;
+}
+
+.quiri-mascot img {
+  object-fit: contain;
+  background: #ffffff;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
