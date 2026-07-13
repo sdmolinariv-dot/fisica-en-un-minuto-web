@@ -58,6 +58,22 @@ export default function HomePage() {
         primary={{ label: "Ver charlas", href: "/charlas" }}
         secondary={{ label: "Trabajemos juntos", href: "/contacto" }}
         supportLine="Más de 400.000 personas ya hacen de la curiosidad una conversación."
+        mobileMedia={
+          <div className="home-mobile-identity">
+            <ImageSlot
+              src={siteConfig.imageSlots.speaking.src}
+              aspect="portrait"
+              alt={siteConfig.imageSlots.speaking.alt}
+              fileName={siteConfig.imageSlots.speaking.fileName}
+              className="home-mobile-portrait"
+              imageClassName="object-[50%_14%]"
+            />
+            <p>
+              <span>Sebastián Molina</span>
+              Físico y creador de Física en 1 Minuto.
+            </p>
+          </div>
+        }
         media={
           <div className="home-hero-collage">
             <ImageSlot

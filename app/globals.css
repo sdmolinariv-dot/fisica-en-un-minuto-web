@@ -140,6 +140,10 @@ a {
   transform: scale(1.025);
 }
 
+.hero-mobile-media {
+  display: none;
+}
+
 .home-hero-collage {
   position: relative;
   aspect-ratio: 16 / 10;
@@ -263,12 +267,49 @@ a {
     display: none;
   }
 
+  .hero-mobile-media {
+    display: block;
+    margin-top: 1.35rem;
+  }
+
+  .home-mobile-identity {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    max-width: 20rem;
+  }
+
+  .home-mobile-portrait {
+    width: 4.75rem;
+    flex: 0 0 4.75rem;
+    border: 2px solid #ffffff;
+    background: #ffffff;
+    box-shadow: 6px 6px 0 rgba(0, 168, 214, 0.8);
+  }
+
+  .home-mobile-portrait::before,
+  .home-mobile-portrait::after {
+    display: none;
+  }
+
+  .home-mobile-identity p {
+    max-width: 13rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .home-mobile-identity p span {
+    display: block;
+    margin-bottom: 0.12rem;
+    color: #ffffff;
+    font-size: 0.96rem;
+  }
+
   .home-hero-portrait {
-    right: 1.25rem;
-    top: auto;
-    bottom: 1.25rem;
-    width: 7.25rem;
-    filter: drop-shadow(6px 6px 0 rgba(0, 168, 214, 0.75));
+    display: none;
   }
 
   .home-hero-name {

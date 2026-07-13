@@ -13,10 +13,11 @@ type HeroProps = {
     href: string;
   };
   supportLine?: string;
+  mobileMedia?: React.ReactNode;
   media: React.ReactNode;
 };
 
-export function Hero({ eyebrow, title, text, primary, secondary, supportLine, media }: HeroProps) {
+export function Hero({ eyebrow, title, text, primary, secondary, supportLine, mobileMedia, media }: HeroProps) {
   return (
     <section className="hero-shell relative overflow-hidden px-4 py-10 text-white sm:px-6 sm:py-14 lg:px-8 lg:py-10">
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.04fr_0.96fr] lg:gap-16">
@@ -41,6 +42,7 @@ export function Hero({ eyebrow, title, text, primary, secondary, supportLine, me
               {supportLine}
             </p>
           ) : null}
+          {mobileMedia ? <div className="hero-mobile-media">{mobileMedia}</div> : null}
         </div>
         <div className="hero-visual">
           <div className="hero-media relative">
