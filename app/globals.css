@@ -140,27 +140,149 @@ a {
   transform: scale(1.025);
 }
 
+.home-hero-collage {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  isolation: isolate;
+}
+
+.home-hero-primary {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-hero-portrait {
+  position: absolute;
+  z-index: 2;
+  right: 6%;
+  top: 8%;
+  width: clamp(8.5rem, 27%, 12.5rem);
+  filter: drop-shadow(10px 10px 0 rgba(0, 168, 214, 0.82));
+}
+
+.home-hero-portrait .science-panel::before,
+.home-hero-portrait .science-panel::after {
+  display: none;
+}
+
+.home-hero-portrait .science-panel {
+  border: 3px solid #ffffff;
+  background: #ffffff;
+}
+
+.home-hero-name {
+  position: absolute;
+  z-index: 3;
+  right: 3.5%;
+  top: 66%;
+  max-width: 11rem;
+  margin: 0;
+  border-top: 2px solid var(--color-signal);
+  padding-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.69rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.home-hero-name span {
+  display: block;
+  margin-bottom: 0.16rem;
+  color: #ffffff;
+  font-size: 0.88rem;
+}
+
+.home-physics-marks {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home-physics-formula {
+  position: absolute;
+  color: rgba(217, 244, 255, 0.85);
+  font-size: clamp(0.7rem, 1.45vw, 0.9rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.home-physics-formula-force {
+  left: 7%;
+  top: 10%;
+}
+
+.home-physics-formula-motion {
+  bottom: 12%;
+  right: 7%;
+}
+
+.home-physics-atom {
+  position: absolute;
+  bottom: 12%;
+  left: 7%;
+  width: clamp(2.2rem, 7vw, 3.6rem);
+  height: auto;
+  color: rgba(0, 168, 214, 0.9);
+}
+
 @media (max-width: 1023px) {
   .hero-visual {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.24;
   }
 
-  .hero-visual .hero-media,
-  .hero-visual .science-panel {
+  .hero-visual .hero-media {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    aspect-ratio: auto !important;
-    border: 0;
-    border-radius: 0;
     box-shadow: none;
   }
 
+  .hero-visual .hero-media > .science-panel,
+  .hero-visual .home-hero-collage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .hero-visual .hero-media > .science-panel,
+  .hero-visual .home-hero-primary {
+    border: 0;
+    border-radius: 0;
+    opacity: 0.24;
+  }
+
   .hero-visual .hero-media > p {
+    display: none;
+  }
+
+  .home-hero-portrait {
+    right: 1.25rem;
+    top: auto;
+    bottom: 1.25rem;
+    width: 7.25rem;
+    filter: drop-shadow(6px 6px 0 rgba(0, 168, 214, 0.75));
+  }
+
+  .home-hero-name {
+    display: none;
+  }
+
+  .home-physics-formula-force {
+    left: auto;
+    right: 9rem;
+    top: 1.8rem;
+  }
+
+  .home-physics-formula-motion,
+  .home-physics-atom {
     display: none;
   }
 }

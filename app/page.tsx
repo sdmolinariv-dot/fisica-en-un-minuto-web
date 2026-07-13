@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Atom } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
 import { Hero } from "@/components/Hero";
 import { ImageSlot } from "@/components/ImageSlot";
@@ -58,13 +59,34 @@ export default function HomePage() {
         secondary={{ label: "Trabajemos juntos", href: "/contacto" }}
         supportLine="Más de 400.000 personas ya hacen de la curiosidad una conversación."
         media={
-          <ImageSlot
-            src={siteConfig.imageSlots.hero.src}
-            aspect="wide"
-            alt={siteConfig.imageSlots.hero.alt}
-            fileName={siteConfig.imageSlots.hero.fileName}
-            label="Foto o video vertical de Sebastián"
-          />
+          <div className="home-hero-collage">
+            <ImageSlot
+              src={siteConfig.imageSlots.hero.src}
+              aspect="wide"
+              alt={siteConfig.imageSlots.hero.alt}
+              fileName={siteConfig.imageSlots.hero.fileName}
+              className="home-hero-primary"
+              imageClassName="object-[50%_56%]"
+            />
+            <div aria-hidden="true" className="home-physics-marks">
+              <span className="home-physics-formula home-physics-formula-force">F = ma</span>
+              <span className="home-physics-formula home-physics-formula-motion">v = dx / dt</span>
+              <Atom className="home-physics-atom" strokeWidth={1.4} />
+            </div>
+            <div className="home-hero-portrait">
+              <ImageSlot
+                src={siteConfig.imageSlots.speaking.src}
+                aspect="portrait"
+                alt={siteConfig.imageSlots.speaking.alt}
+                fileName={siteConfig.imageSlots.speaking.fileName}
+                imageClassName="object-[50%_14%]"
+              />
+            </div>
+            <p className="home-hero-name">
+              <span>Sebastián Molina</span>
+              Físico y comunicador científico
+            </p>
+          </div>
         }
       />
 

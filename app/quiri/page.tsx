@@ -48,7 +48,7 @@ export default function QuiriPage() {
                     className="inline-flex min-h-11 items-center gap-2 rounded-md border border-ink/16 bg-white/70 px-5 py-3 text-sm font-semibold text-ink-soft"
                   >
                     <Download aria-hidden="true" className="h-4 w-4" />
-                    Enlace {link.label} pendiente
+                    {link.label}: {link.availability ?? "Próximamente"}
                   </span>
                 )
               )}

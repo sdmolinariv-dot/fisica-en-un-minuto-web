@@ -205,6 +205,9 @@ export const profileSections = [
 ] as const;
 
 export const quiriDownloadLinks = [
-  { label: "Android", href: "" },
-  { label: "iOS", href: "" }
+  {
+    label: "Android",
+    href: "https://play.google.com/store/apps/details?id=com.sebamr.quiri"
+  },
+  { label: "Apple", href: "", availability: "Próximamente" }
 ] as const;
