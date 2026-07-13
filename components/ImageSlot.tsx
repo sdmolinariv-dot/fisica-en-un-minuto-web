@@ -6,7 +6,7 @@ type ImageSlotProps = {
   src?: string;
   alt: string;
   fileName: string;
-  aspect?: "portrait" | "wide" | "square";
+  aspect?: "portrait" | "wide" | "square" | "phone";
   label?: string;
   className?: string;
   imageClassName?: string;
@@ -20,6 +20,7 @@ export function ImageSlot({ src, alt, fileName, aspect = "wide", label, classNam
         aspect === "portrait" && "aspect-[4/5]",
         aspect === "wide" && "aspect-[16/10]",
         aspect === "square" && "aspect-square",
+        aspect === "phone" && "aspect-[369/800]",
         className
       )}
     >

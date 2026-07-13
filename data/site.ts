@@ -47,19 +47,14 @@ export const siteConfig = {
       alt: "Quiri, el pudú protagonista del juego educativo Quiri"
     },
     quiriScreenshotOne: {
-      src: "",
-      fileName: "/public/images/quiri-screenshot-01.webp",
-      alt: "Captura real de la aplicación Quiri"
+      src: "/quiri-feed.jpg",
+      fileName: "/public/quiri-feed.jpg",
+      alt: "Pantalla de Quiri Feed con una pregunta de biología sobre resistencia a antibióticos"
     },
     quiriScreenshotTwo: {
-      src: "",
-      fileName: "/public/images/quiri-screenshot-02.webp",
-      alt: "Captura real de una actividad dentro de Quiri"
-    },
-    quiriQr: {
-      src: "",
-      fileName: "/public/images/quiri-qr.webp",
-      alt: "Código QR de descarga de Quiri"
+      src: "/quiri-mundialero.jpg",
+      fileName: "/public/quiri-mundialero.jpg",
+      alt: "Pantalla del evento especial Quiri Mundialero con preguntas sobre ciencia del fútbol"
     }
   }
 } as const;

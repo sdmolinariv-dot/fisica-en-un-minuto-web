@@ -88,25 +88,22 @@ export default function QuiriPage() {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-4 lg:grid-cols-[1fr_1fr_0.72fr]">
+        <div className="mx-auto grid max-w-4xl justify-items-center gap-6 sm:grid-cols-2">
           <ImageSlot
             src={siteConfig.imageSlots.quiriScreenshotOne.src}
+            aspect="phone"
             alt={siteConfig.imageSlots.quiriScreenshotOne.alt}
             fileName={siteConfig.imageSlots.quiriScreenshotOne.fileName}
             label="Captura real 01"
+            className="w-full max-w-[22rem]"
           />
           <ImageSlot
             src={siteConfig.imageSlots.quiriScreenshotTwo.src}
+            aspect="phone"
             alt={siteConfig.imageSlots.quiriScreenshotTwo.alt}
             fileName={siteConfig.imageSlots.quiriScreenshotTwo.fileName}
             label="Captura real 02"
-          />
-          <ImageSlot
-            src={siteConfig.imageSlots.quiriQr.src}
-            aspect="square"
-            alt={siteConfig.imageSlots.quiriQr.alt}
-            fileName={siteConfig.imageSlots.quiriQr.fileName}
-            label="Código QR"
+            className="w-full max-w-[22rem]"
           />
         </div>
       </section>
