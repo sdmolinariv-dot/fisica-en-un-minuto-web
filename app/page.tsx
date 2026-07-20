@@ -11,7 +11,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceCard } from "@/components/ServiceCard";
 import { featuredProjects } from "@/data/projects";
 import { homeServices } from "@/data/services";
-import { impactMetrics, logoCollaborations, siteConfig } from "@/data/site";
+import { impactBreakdown, impactMetrics, logoCollaborations, siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: {
@@ -57,7 +57,7 @@ export default function HomePage() {
         text="Soy Sebastián Molina, físico y creador de Física en 1 Minuto. Convierto ideas complejas en historias claras, entretenidas y responsables."
         primary={{ label: "Ver charlas", href: "/charlas" }}
         secondary={{ label: "Trabajemos juntos", href: "/contacto" }}
-        supportLine="Más de 400.000 personas ya hacen de la curiosidad una conversación."
+        supportLine="419.588 personas ya hacen de la curiosidad una conversación."
         mobileMedia={
           <div className="home-mobile-identity">
             <ImageSlot
@@ -125,9 +125,9 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div>
             <SectionHeading
-              eyebrow="Impacto"
-              title="Una comunidad que no se conforma con la primera explicación."
-              description="Ciencia en lenguaje cotidiano, conversaciones que siguen después del video y una audiencia que llega por curiosidad."
+              eyebrow="Métricas · julio 2026"
+              title="Una comunidad que llega por curiosidad y se queda por la ciencia."
+              description="Resultados de los últimos 30 días en Instagram: 20 de junio al 19 de julio de 2026."
               className="text-white [&_h2]:text-white [&_p]:text-white/72"
             />
             <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -135,6 +135,18 @@ export default function HomePage() {
                 <MetricCard key={metric.label} {...metric} />
               ))}
             </div>
+            <div className="mt-14 grid border-y border-white/20 sm:grid-cols-2 lg:grid-cols-4">
+              {impactBreakdown.map((metric) => (
+                <div key={metric.label} className="py-6 sm:pr-6 lg:py-7">
+                  <p className="text-2xl font-semibold leading-tight tracking-[-0.03em] text-white">{metric.value}</p>
+                  <p className="mt-2 text-sm font-medium text-mint">{metric.label}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 max-w-3xl text-sm leading-6 text-white/60">
+              Datos reportados por el panel profesional de Instagram. Las cifras de visualizaciones, alcance,
+              interacciones y crecimiento corresponden al período indicado; los seguidores reflejan el registro al 19 de julio.
+            </p>
           </div>
         </div>
       </section>

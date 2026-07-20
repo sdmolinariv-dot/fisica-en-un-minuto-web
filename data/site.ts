@@ -58,24 +58,43 @@ export const siteConfig = {
 
 export const impactMetrics = [
   {
-    value: "Más de 400.000",
-    label: "seguidores",
-    detail: "Comunidad de divulgación científica y pensamiento crítico."
+    value: "419.588",
+    label: "seguidores en Instagram",
+    detail: "Audiencia registrada al 19 de julio de 2026."
   },
   {
-    value: "Millones",
-    label: "de visualizaciones mensuales",
-    detail: "Contenido científico diseñado para redes y audiencias amplias."
+    value: "10,8 M",
+    label: "visualizaciones en 30 días",
+    detail: "10.785.758 visualizaciones entre el 20 de junio y el 19 de julio."
   },
   {
-    value: "Orgánica",
-    label: "comunidad construida",
-    detail: "Crecimiento sostenido a partir de contenido educativo y conversación pública."
+    value: "1,76 M",
+    label: "cuentas alcanzadas",
+    detail: "1.761.477 cuentas únicas alcanzadas durante el período."
   },
   {
-    value: "Experiencia",
-    label: "en ciencia y comunicación",
-    detail: "Campañas, educación, charlas y proyectos audiovisuales."
+    value: "810 mil",
+    label: "interacciones",
+    detail: "810.331 interacciones generadas por el contenido compartido."
+  }
+] as const;
+
+export const impactBreakdown = [
+  {
+    value: "+13.521",
+    label: "seguidores netos"
+  },
+  {
+    value: "148",
+    label: "contenidos compartidos"
+  },
+  {
+    value: "64,9%",
+    label: "visualizaciones de seguidores"
+  },
+  {
+    value: "35,1%",
+    label: "visualizaciones de no seguidores"
   }
 ] as const;
 
@@ -118,12 +137,12 @@ export const profileHighlights = [
     label: "Inicio de Física en 1 Minuto"
   },
   {
-    value: "400.000+",
-    label: "seguidores en la comunidad"
+    value: "419.588",
+    label: "seguidores en Instagram, julio de 2026"
   },
   {
-    value: "8M+",
-    label: "visualizaciones en 30 días, mayo-junio 2026"
+    value: "10,8 M",
+    label: "visualizaciones en 30 días, junio-julio de 2026"
   },
   {
     value: "2013-2019",
@@ -170,7 +189,7 @@ export const profileSections = [
     text: "Física en 1 Minuto traduce conceptos científicos desde primeros principios para audiencias no especialistas, con foco en claridad, rigor y pensamiento crítico.",
     items: [
       "Fundador y creador de Física en 1 Minuto, 2023-presente.",
-      "Comunidad de más de 400.000 seguidores y más de 8 millones de visualizaciones en un periodo de 30 días, según dashboard profesional de Instagram de mayo-junio de 2026.",
+      "Comunidad de 419.588 seguidores y 10.785.758 visualizaciones en un periodo de 30 días, según el panel profesional de Instagram entre el 20 de junio y el 19 de julio de 2026.",
       "Contenido creado de forma orgánica, muchas veces en respuesta directa a preguntas de la comunidad o a casos de desinformación pública."
     ]
   },
