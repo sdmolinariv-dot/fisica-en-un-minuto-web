@@ -10,12 +10,9 @@ type LogoCloudProps = {
 };
 
 export function LogoCloud({ title, logos }: LogoCloudProps) {
-  const slots: LogoCloudProps["logos"] = logos.length > 0 ? logos : [
-    { name: "Universidades", image: "" },
-    { name: "Medios", image: "" },
-    { name: "Instituciones", image: "" },
-    { name: "Marcas", image: "" }
-  ];
+  if (logos.length === 0) {
+    return null;
+  }
 
   return (
     <section className="border-y border-ink/10 bg-white px-4 py-16 sm:px-6 lg:px-8">
@@ -29,7 +26,7 @@ export function LogoCloud({ title, logos }: LogoCloudProps) {
         </div>
 
         <div className="mt-9 grid grid-cols-2 border-l border-t border-ink/10 sm:grid-cols-4">
-          {slots.map((logo) => {
+          {logos.map((logo) => {
             const content = logo.image ? (
               <Image src={logo.image} alt={logo.name} width={180} height={80} className="max-h-14 w-auto object-contain" />
             ) : (
