@@ -104,15 +104,6 @@ export const logoCollaborations: Array<{
   href?: string;
 }> = [];
 
-export const contactReasons = [
-  "Cotizar una charla",
-  "Proponer una colaboración",
-  "Auspiciar Quiri",
-  "Invitación de prensa",
-  "Proyecto audiovisual",
-  "Consulta general"
-] as const;
-
 export const aboutIntroParagraphs = [
   "Soy físico, Licenciado en Física por la Pontificia Universidad Católica de Chile, y creador de Física en 1 Minuto. Mi trabajo nace de una convicción sencilla: la ciencia no debería sentirse reservada para quienes ya saben de ciencia.",
   "Antes de dedicarme a la divulgación a gran escala, me formé entre investigación experimental, docencia universitaria y análisis cuantitativo. Esa mezcla marca mi forma de comunicar: explicar desde primeros principios, cuidar el rigor y traducir ideas complejas sin convertirlas en humo.",

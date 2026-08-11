@@ -1,5 +1,5 @@
 import { AlertTriangle } from "lucide-react";
-import { ContactForm, type ContactFormField } from "@/components/ContactForm";
+import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -13,51 +13,6 @@ export const metadata = createMetadata({
     "Campañas, series educativas, proyectos audiovisuales, charlas e integraciones en Quiri con rigor científico y transparencia.",
   path: "/colaboraciones"
 });
-
-const collaborationFields: readonly ContactFormField[] = [
-  { name: "nombre", label: "Nombre", required: true, autoComplete: "name" },
-  { name: "empresa", label: "Empresa", required: true, autoComplete: "organization" },
-  { name: "cargo", label: "Cargo", autoComplete: "organization-title" },
-  { name: "correoCorporativo", label: "Correo corporativo", type: "email", required: true, autoComplete: "email" },
-  {
-    name: "tipoColaboracion",
-    label: "Tipo de colaboración",
-    type: "select",
-    required: true,
-    options: [
-      "Campaña en redes sociales",
-      "Serie educativa patrocinada",
-      "Proyecto audiovisual",
-      "Charla o activación",
-      "Integración en Quiri",
-      "Otro formato"
-    ]
-  },
-  { name: "fechaEstimada", label: "Fecha estimada", placeholder: "Fecha, mes o periodo tentativo" },
-  {
-    name: "presupuesto",
-    label: "Presupuesto disponible (CLP)",
-    type: "number",
-    placeholder: "Ej: 1200000",
-    min: 0,
-    step: 1,
-    inputMode: "numeric",
-    prefix: "$"
-  },
-  {
-    name: "derechosUso",
-    label: "Derechos de uso requeridos",
-    type: "select",
-    options: ["Solo publicación orgánica", "Uso en pauta", "Uso interno", "Uso multiplataforma", "A definir"]
-  },
-  {
-    name: "descripcionCampana",
-    label: "Descripción de la campaña",
-    type: "textarea",
-    required: true
-  },
-  { name: "mensaje", label: "Mensaje", type: "textarea" }
-];
 
 export default function ColaboracionesPage() {
   return (
@@ -122,23 +77,12 @@ export default function ColaboracionesPage() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-9 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-          <div className="lg:sticky lg:top-28">
-            <SectionHeading
-              eyebrow="Formulario comercial"
-              title="Cuéntame qué necesita comunicar tu marca."
-              description="Las propuestas llegan directamente al equipo de Física en 1 Minuto."
-            />
-          </div>
-          <ContactForm
-            formName="colaboraciones"
-            fields={collaborationFields}
-            submitLabel="Enviar propuesta"
-            successMessage="Gracias. Tu propuesta fue enviada correctamente."
-          />
-        </div>
-      </section>
+      <CTASection
+        title="¿Tienes una idea para comunicar ciencia con tu marca?"
+        text="Escríbeme directamente con el contexto de tu propuesta y vemos juntos el mejor formato para desarrollarla."
+        buttonLabel="Hablemos de tu proyecto"
+        href="/contacto"
+      />
 
       <JsonLd
         data={{

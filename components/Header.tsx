@@ -31,7 +31,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <ActionLink href="/charlas#cotizar-charla">Cotizar una charla</ActionLink>
+          <ActionLink href="/contacto">Cotizar una charla</ActionLink>
         </div>
         <MobileMenu />
       </div>

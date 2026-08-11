@@ -1,87 +1,70 @@
-import { ContactForm, type ContactFormField } from "@/components/ContactForm";
-import { SectionHeading } from "@/components/SectionHeading";
-import { SocialLinks } from "@/components/SocialLinks";
+import { AtSign, Mail } from "lucide-react";
 import { createMetadata } from "@/lib/seo";
-import { contactReasons, siteConfig } from "@/data/site";
+import { siteConfig } from "@/data/site";
 
 export const metadata = createMetadata({
   title: "Contacto",
   description:
-    "Contacto para cotizar charlas, proponer colaboraciones, auspiciar Quiri, invitaciones de prensa y proyectos audiovisuales.",
+    "Contacto directo para charlas, colaboraciones, auspicios de Quiri, invitaciones de prensa y proyectos audiovisuales.",
   path: "/contacto"
 });
 
-const contactFields: readonly ContactFormField[] = [
-  { name: "nombre", label: "Nombre", required: true, autoComplete: "name" },
-  { name: "organizacion", label: "Organización", autoComplete: "organization" },
-  { name: "correo", label: "Correo", type: "email", required: true, autoComplete: "email" },
-  {
-    name: "motivo",
-    label: "Motivo",
-    type: "select",
-    required: true,
-    options: contactReasons
-  },
-  {
-    name: "presupuesto",
-    label: "Presupuesto disponible (CLP)",
-    type: "number",
-    placeholder: "Ej: 500000",
-    min: 0,
-    step: 1,
-    inputMode: "numeric",
-    prefix: "$"
-  },
-  { name: "fechaEstimada", label: "Fecha estimada", placeholder: "Fecha, mes o periodo tentativo" },
-  { name: "mensaje", label: "Mensaje", type: "textarea", required: true }
-];
+const instagramLink = siteConfig.socialLinks.find((link) => link.label === "Instagram")?.href ?? "";
 
-const contactOptions = [
-  "Cotizar una charla",
-  "Proponer una colaboración",
-  "Auspiciar Quiri",
-  "Invitaciones de prensa",
-  "Proyectos audiovisuales",
-  "Consultas generales"
+const contactMethods = [
+  {
+    label: "Correo",
+    value: siteConfig.contact.email,
+    detail: "Para charlas, propuestas y colaboraciones.",
+    href: `mailto:${siteConfig.contact.email}`,
+    icon: Mail,
+    external: false
+  },
+  {
+    label: "Instagram",
+    value: "@fisica.en.1.minuto",
+    detail: "Para conversar por mensaje directo.",
+    href: instagramLink,
+    icon: AtSign,
+    external: true
+  }
 ] as const;
 
 export default function ContactoPage() {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-        <div className="lg:sticky lg:top-28">
-          <p className="mb-4 text-sm font-bold uppercase text-violet">Contacto</p>
-          <h1 className="text-4xl font-semibold leading-tight text-ink sm:text-6xl">Conversemos</h1>
-          <p className="mt-6 text-lg leading-8 text-ink-soft">
-            Para invitaciones que requieren preparación, traslado o participación profesional, indica si la actividad
-            cuenta con presupuesto.
+    <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-bold uppercase text-violet">Contacto</p>
+          <h1 className="text-balance mt-4 text-4xl font-semibold leading-tight text-ink sm:text-6xl">¿Hablamos?</h1>
+          <p className="text-pretty mx-auto mt-6 max-w-2xl text-lg leading-8 text-ink-soft">
+            Para charlas, colaboraciones, entrevistas o proyectos educativos, escríbeme directamente. Respondo
+            personalmente.
           </p>
-
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-            {contactOptions.map((option) => (
-              <div key={option} className="rounded-lg border border-ink/10 bg-white px-4 py-3 text-sm font-semibold text-ink shadow-line">
-                {option}
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8">
-            <SectionHeading title="Redes y correo" description="Escríbeme directamente a contacto@fisicaenunminuto.com." />
-            <div className="mt-5">
-              <SocialLinks />
-            </div>
-            <a href={`mailto:${siteConfig.contact.email}`} className="mt-5 inline-flex text-sm font-semibold text-blue hover:text-deep-purple">
-              {siteConfig.contact.email}
-            </a>
-          </div>
         </div>
 
-        <ContactForm
-          formName="contacto-general"
-          fields={contactFields}
-          submitLabel="Enviar mensaje"
-          successMessage="Gracias. Tu mensaje fue enviado correctamente."
-        />
+        <div className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-2">
+          {contactMethods.map((method) => {
+            const Icon = method.icon;
+
+            return (
+              <a
+                key={method.label}
+                href={method.href}
+                target={method.external ? "_blank" : undefined}
+                rel={method.external ? "noreferrer" : undefined}
+                className="group flex min-h-52 flex-col items-center justify-center rounded-md border border-ink/15 bg-white px-6 py-8 text-center transition-[transform,border-color,background-color] duration-200 hover:-translate-y-0.5 hover:border-blue hover:bg-cyan/5"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-md bg-blue text-white transition-transform duration-200 group-hover:scale-105">
+                  <Icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.9} />
+                </span>
+                <span className="mt-5 text-xs font-bold uppercase text-violet">{method.label}</span>
+                <span className="mt-2 break-all text-base font-semibold text-ink sm:text-lg">{method.value}</span>
+                <span className="mt-2 text-sm leading-6 text-ink-soft">{method.detail}</span>
+              </a>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

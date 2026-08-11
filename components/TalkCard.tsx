@@ -53,7 +53,7 @@ export function TalkCard({ title, description, audience, duration, modality, wor
               </span>
             </li>
           </ul>
-          <ActionLink href="#cotizar-charla" className="mt-6 w-full">
+          <ActionLink href="/contacto" className="mt-6 w-full">
             Cotizar esta charla
           </ActionLink>
         </div>
