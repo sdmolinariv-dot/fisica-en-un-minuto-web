@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { TalkCard } from "@/components/TalkCard";
 import { createMetadata } from "@/lib/seo";
 import { talks } from "@/data/talks";
-import { budgetRanges, siteConfig } from "@/data/site";
+import { siteConfig } from "@/data/site";
 
 export const metadata = createMetadata({
   title: "Charlas y talleres",
@@ -49,10 +49,14 @@ const talkFormFields: readonly ContactFormField[] = [
   },
   {
     name: "presupuesto",
-    label: "Presupuesto disponible",
-    type: "select",
+    label: "Presupuesto disponible (CLP)",
+    type: "number",
     required: true,
-    options: budgetRanges
+    placeholder: "Ej: 750000",
+    min: 0,
+    step: 1,
+    inputMode: "numeric",
+    prefix: "$"
   },
   { name: "mensaje", label: "Mensaje", type: "textarea", required: true }
 ];

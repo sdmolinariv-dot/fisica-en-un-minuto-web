@@ -8,11 +8,15 @@ import { cn } from "@/lib/utils";
 export type ContactFormField = {
   name: string;
   label: string;
-  type?: "text" | "email" | "tel" | "date" | "textarea" | "select";
+  type?: "text" | "email" | "tel" | "date" | "number" | "textarea" | "select";
   required?: boolean;
   options?: readonly string[];
   placeholder?: string;
   autoComplete?: string;
+  min?: number;
+  step?: number;
+  inputMode?: "numeric" | "decimal";
+  prefix?: string;
 };
 
 type ContactFormProps = {
@@ -59,6 +63,9 @@ export function ContactForm({
       }
       if (field.type === "email" && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
         nextErrors[field.name] = "Ingresa un correo válido.";
+      }
+      if (field.type === "number" && value && (!/^\d+$/.test(value) || Number(value) < (field.min ?? 0))) {
+        nextErrors[field.name] = "Ingresa un monto válido, sin puntos ni comas.";
       }
     });
 
@@ -140,7 +147,7 @@ export function ContactForm({
             required: field.required,
             "aria-invalid": Boolean(error),
             "aria-describedby": error ? `${fieldId}-error` : undefined,
-            className: "field-base"
+            className: cn("field-base", field.prefix ? "pl-9" : undefined)
           };
 
           return (
@@ -162,12 +169,22 @@ export function ContactForm({
                   ))}
                 </select>
               ) : (
-                <input
-                  {...commonProps}
-                  type={field.type ?? "text"}
-                  placeholder={field.placeholder}
-                  autoComplete={field.autoComplete}
-                />
+                <div className={field.prefix ? "relative" : undefined}>
+                  {field.prefix ? (
+                    <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-sm font-semibold text-ink-soft">
+                      {field.prefix}
+                    </span>
+                  ) : null}
+                  <input
+                    {...commonProps}
+                    type={field.type ?? "text"}
+                    placeholder={field.placeholder}
+                    autoComplete={field.autoComplete}
+                    min={field.min}
+                    step={field.step}
+                    inputMode={field.inputMode}
+                  />
+                </div>
               )}
 
               {error ? (

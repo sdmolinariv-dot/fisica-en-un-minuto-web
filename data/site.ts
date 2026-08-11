@@ -104,14 +104,6 @@ export const logoCollaborations: Array<{
   href?: string;
 }> = [];
 
-export const budgetRanges = [
-  "Menos de $300.000",
-  "Entre $300.000 y $600.000",
-  "Entre $600.000 y $1.000.000",
-  "Más de $1.000.000",
-  "Aún no está definido"
-] as const;
-
 export const contactReasons = [
   "Cotizar una charla",
   "Proponer una colaboración",

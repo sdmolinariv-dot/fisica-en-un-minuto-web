@@ -2,7 +2,7 @@ import { ContactForm, type ContactFormField } from "@/components/ContactForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SocialLinks } from "@/components/SocialLinks";
 import { createMetadata } from "@/lib/seo";
-import { budgetRanges, contactReasons, siteConfig } from "@/data/site";
+import { contactReasons, siteConfig } from "@/data/site";
 
 export const metadata = createMetadata({
   title: "Contacto",
@@ -24,9 +24,13 @@ const contactFields: readonly ContactFormField[] = [
   },
   {
     name: "presupuesto",
-    label: "Presupuesto",
-    type: "select",
-    options: budgetRanges
+    label: "Presupuesto disponible (CLP)",
+    type: "number",
+    placeholder: "Ej: 500000",
+    min: 0,
+    step: 1,
+    inputMode: "numeric",
+    prefix: "$"
   },
   { name: "fechaEstimada", label: "Fecha estimada", placeholder: "Fecha, mes o periodo tentativo" },
   { name: "mensaje", label: "Mensaje", type: "textarea", required: true }

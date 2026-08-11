@@ -34,7 +34,16 @@ const collaborationFields: readonly ContactFormField[] = [
     ]
   },
   { name: "fechaEstimada", label: "Fecha estimada", placeholder: "Fecha, mes o periodo tentativo" },
-  { name: "presupuesto", label: "Presupuesto", placeholder: "Indica rango o referencia si existe" },
+  {
+    name: "presupuesto",
+    label: "Presupuesto disponible (CLP)",
+    type: "number",
+    placeholder: "Ej: 1200000",
+    min: 0,
+    step: 1,
+    inputMode: "numeric",
+    prefix: "$"
+  },
   {
     name: "derechosUso",
     label: "Derechos de uso requeridos",
