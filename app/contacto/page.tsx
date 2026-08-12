@@ -23,7 +23,7 @@ const contactMethods = [
   {
     label: "Instagram",
     value: "@fisica.en.1.minuto",
-    detail: "Para conversar por mensaje directo.",
+    detail: "Sigue el contenido de Física en 1 Minuto.",
     href: instagramLink,
     icon: AtSign,
     external: true
@@ -38,7 +38,7 @@ export default function ContactoPage() {
           <p className="text-sm font-bold uppercase text-violet">Contacto</p>
           <h1 className="text-balance mt-4 text-4xl font-semibold leading-tight text-ink sm:text-6xl">¿Hablamos?</h1>
           <p className="text-pretty mx-auto mt-6 max-w-2xl text-lg leading-8 text-ink-soft">
-            Para charlas, colaboraciones, entrevistas o proyectos educativos, escríbeme directamente. Respondo
+            Para charlas, colaboraciones, entrevistas o proyectos educativos, escríbeme por correo. Respondo
             personalmente.
           </p>
         </div>
